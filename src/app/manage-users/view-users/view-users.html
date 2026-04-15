@@ -1,0 +1,31 @@
+<div class="users-grid">
+    <div class="user-card" *ngFor="let user of users">
+        <div class="user-avatar">
+            <img [src]="user.image" [alt]="user.fullName">
+            <div class="user-badges">
+                <span class="badge admin" *ngIf="user.isAdmin">Admin</span>
+                <span class="badge blocked" *ngIf="user.isBlocked">Blocked</span>
+            </div>
+        </div>
+
+        <div class="user-info">
+            <h3>{{ user.fullName }}</h3>
+            <p class="email">{{ user.email }}</p>
+            <p class="details">
+                <span class="gender">{{ user.gender | titlecase }}</span>
+                <span class="separator">•</span>
+                <span class="birthday">{{ formatDate(user.birthday) }}</span>
+            </p>
+        </div>
+
+        <div class="user-actions">
+            <a [routerLink]="['edit', user.email]" class="btn-edit">
+                Edit User
+            </a>
+        </div>
+    </div>
+
+    <div class="no-users" *ngIf="users.length === 0">
+        <p>No users found.</p>
+    </div>
+</div>

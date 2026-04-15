@@ -1,0 +1,23 @@
+:host {
+    display: block;
+    width: 100%;
+    background: linear-gradient(180deg, #FDF8F3 0%, #FAF6F1 100%);
+}
+
+.container-fluid {
+    width: 100%;
+    margin: 0;
+    padding: 90px 30px 50px;
+    background: linear-gradient(180deg, #FDF8F3 0%, #FAF6F1 100%);
+}
+
+.row {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 80px 16px 40px;
+    }
+}

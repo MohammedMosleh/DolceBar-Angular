@@ -1,0 +1,137 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "hassan@test.com",
+      "password": "123",
+      "fullName": "Hassan Qablawi",
+      "birthday": "2001-01-14",
+      "gender": "male",
+      "image": "/assets/avatar-male.svg",
+      "isAdmin": true,
+      "isBlocked": false
+    },
+    {
+      "id": "2",
+      "email": "mohammed@test.com",
+      "password": "123",
+      "fullName": "Mohamed Mosleh",
+      "birthday": "2000-08-25",
+      "gender": "male",
+      "image": "/assets/avatar-male.svg",
+      "isAdmin": true,
+      "isBlocked": false
+    },
+    {
+      "id": "3",
+      "email": "blocked@test.com",
+      "password": "123",
+      "fullName": "Blocked User",
+      "birthday": "1995-05-15",
+      "gender": "female",
+      "image": "/assets/avatar-female.svg",
+      "isAdmin": false,
+      "isBlocked": true
+    },
+    {
+      "id": "f665",
+      "email": "omar@gmail.com",
+      "password": "omar1234",
+      "fullName": "Omar Qadah",
+      "birthday": "2017-06-13",
+      "gender": "male",
+      "image": "/assets/avatar-male.svg",
+      "isAdmin": false,
+      "isBlocked": false
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "waffle",
+      "image": "/assets/waffle.jpeg",
+      "price": 45,
+      "description": "Belgian Waffle with a lot Chocolate",
+      "fullDescription": "Waffle Type: Belgian, Toppings: Chocolate Syrup, Serving: 1 person.",
+      "categoryId": 1
+    },
+    {
+      "id": "2",
+      "name": "crep",
+      "image": "/assets/crep.jpg",
+      "price": 18,
+      "description": "French Crep with Nutella",
+      "fullDescription": "Crepe Size: Medium, Filling: Nutella, Origin: France.",
+      "categoryId": 2
+    },
+    {
+      "id": "3",
+      "name": "suchi",
+      "image": "/assets/suchi.jpeg",
+      "price": 25,
+      "description": "Suchi Crep with Bueno",
+      "fullDescription": "Crepe Type: Sweet, Filling: Bueno Chocolate, Special: Sushi-style rolled.",
+      "categoryId": 2
+    },
+    {
+      "id": "4",
+      "name": "choros",
+      "image": "/assets/choros.jpeg",
+      "price": 30,
+      "description": "Spanish Choros with sugar",
+      "fullDescription": "Serving Size: 5 pieces, Dipping Sauce: None, Special: Spanish style.",
+      "categoryId": 3
+    },
+    {
+      "id": "5",
+      "name": "ice-cream",
+      "image": "/assets/icecream.jpeg",
+      "price": 15,
+      "description": "Classic ice cream scoops served in a cone.",
+      "fullDescription": "Flavors: Vanilla, Chocolate, Strawberry. Serving: 2 Scoops. Includes a cone or cup.",
+      "categoryId": 4
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Waffles"
+    },
+    {
+      "id": "2",
+      "name": "Crepes"
+    },
+    {
+      "id": "3",
+      "name": "Desserts"
+    },
+    {
+      "id": "4",
+      "name": "Ice Cream"
+    }
+  ],
+  "orders": [
+    {
+      "id": "dc32",
+      "user": "Omar Qadah",
+      "products": [
+        {
+          "name": "suchi",
+          "price": 25,
+          "quantity": 1
+        }
+      ],
+      "total": 25,
+      "date": "3/6/2026",
+      "isPaid": true
+    },
+    {
+      "id": "c1cd",
+      "user": "Omar Qadah",
+      "products": [],
+      "total": 0,
+      "date": "3/6/2026",
+      "isPaid": true
+    }
+  ]
+}

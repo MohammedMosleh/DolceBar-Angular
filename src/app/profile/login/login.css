@@ -1,0 +1,136 @@
+
+
+.login-card {
+    background: #FFFFFF;
+    border-radius: 28px;
+    padding: 50px 45px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 440px;
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+
+.login-card h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #1A0F0A;
+    margin-bottom: 8px;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.login-form .form-group {
+    margin-bottom: 24px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Lato', sans-serif;
+    color: #3D2314;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.login-form .form-control {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #E8DFD5;
+    border-radius: 12px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #1A0F0A;
+    background: #FAFAFA;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.login-form .form-control:focus {
+    outline: none;
+    border-color: #D4A853;
+    box-shadow: 0 0 0 4px rgba(212, 168, 83, 0.2);
+    background: #FFFFFF;
+}
+
+.error-message {
+    background: linear-gradient(135deg, #FEF2F2, #FEE2E2);
+    color: #B91C1C;
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    border-left: 4px solid #DC2626;
+}
+
+.btn-block {
+    width: 100%;
+    padding: 18px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3D2314 0%, #D4A853 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(212, 168, 83, 0.4);
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 28px;
+    font-family: 'Lato', sans-serif;
+    color: #8B7355;
+    font-size: 15px;
+}
+
+.register-link a {
+    color: #D4A853;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 40px 30px;
+        border-radius: 20px;
+    }
+
+    .login-card h2 {
+        font-size: 1.8rem;
+    }
+}
+/* Validation Error Styling */
+.validation-error {
+    color: #DC2626;
+    font-size: 12px;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+.form-control.invalid {
+    border-color: #DC2626;
+    background: #FEF2F2;
+}
+
+.form-control.invalid:focus {
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.2);
+}

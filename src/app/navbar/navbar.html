@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <a class="navbar-brand logo" routerLink="/home">DolceBar</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <div class="navbar-nav ms-auto mb-2 mb-lg-0 links">
+        <a routerLink="/home" routerLinkActive="active" class="btn btn-secondary p-3 me-2">Home</a>
+        <a routerLink="/catalog" routerLinkActive="active" class="btn btn-secondary p-3 me-2">Catalog</a>
+        <a routerLink="/cart" routerLinkActive="active" class="btn btn-secondary p-3 me-2">Cart</a>
+        <a routerLink="/about" routerLinkActive="active" class="btn btn-secondary p-3 me-2">About Us</a>
+
+
+        <a *ngIf="!currentUser" routerLink="/profile" routerLinkActive="active"
+          class="btn btn-secondary p-3 me-2">Login</a>
+
+
+        <div *ngIf="currentUser" class="profile-dropdown">
+          <button class="profile-btn" (click)="toggleDropdown()">
+            <img [src]="currentUser.image" [alt]="currentUser.fullName" class="profile-avatar">
+            <span class="profile-name">Profile</span>
+            <span class="dropdown-arrow">▼</span>
+          </button>
+
+          <div class="dropdown-menu-custom" [class.show]="dropdownOpen">
+            <div class="dropdown-header">
+              <img [src]="currentUser.image" [alt]="currentUser.fullName" class="dropdown-avatar">
+              <span class="dropdown-user-name">{{ currentUser.fullName }}</span>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a routerLink="/profile/user-details" class="dropdown-item" (click)="closeDropdown()">
+              <span class="dropdown-icon">&#128100;</span> User Details
+            </a>
+            <a *ngIf="currentUser.isAdmin" routerLink="/manage-users" class="dropdown-item" (click)="closeDropdown()">
+              <span class="dropdown-icon">&#128101;</span> Manage Users
+            </a>
+            <a *ngIf="currentUser.isAdmin" routerLink="/manage-products" class="dropdown-item"
+              (click)="closeDropdown()">
+              <span class="dropdown-icon">&#128230;</span> Manage Products
+            </a>
+            <button class="dropdown-item logout-item" (click)="logout()">
+              <span class="dropdown-icon">&#128682;</span> Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>

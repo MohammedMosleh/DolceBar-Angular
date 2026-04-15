@@ -1,0 +1,64 @@
+.manage-users-container {
+    min-height: calc(100vh - 200px);
+    padding: 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.manage-users-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.manage-users-header h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #f39c12, #e74c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.manage-users-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+.manage-users-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.manage-users-nav a {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.manage-users-nav a:hover {
+    background: rgba(243, 156, 18, 0.2);
+    border-color: #f39c12;
+}
+
+.manage-users-nav a.active {
+    background: linear-gradient(135deg, #f39c12, #e74c3c);
+    border-color: transparent;
+}
+
+.manage-users-content {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}

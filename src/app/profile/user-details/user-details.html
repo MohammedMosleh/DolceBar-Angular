@@ -1,0 +1,29 @@
+<div class="user-details-card" *ngIf="currentUser">
+    <div class="user-avatar">
+        <img [src]="currentUser.image" [alt]="currentUser.fullName" class="avatar-image">
+    </div>
+
+    <h2>{{ currentUser.fullName }}</h2>
+
+    <div class="user-info">
+        <div class="info-row">
+            <span class="info-label">Email:</span>
+            <span class="info-value">{{ currentUser.email }}</span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-label">Birthday:</span>
+            <span class="info-value">{{ formatDate(currentUser.birthday) }}</span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-label">Gender:</span>
+            <span class="info-value gender-badge" [class.male]="currentUser.gender === 'male'"
+                [class.female]="currentUser.gender === 'female'">
+                {{ currentUser.gender === 'male' ? 'Male' : 'Female' }}
+            </span>
+        </div>
+    </div>
+
+    <button class="btn btn-logout" (click)="onLogout()">Logout</button>
+</div>

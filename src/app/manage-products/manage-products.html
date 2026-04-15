@@ -1,0 +1,19 @@
+<div class="manage-products-container">
+    <div class="manage-products-header">
+        <h1>Product Management</h1>
+        <p>View, add, edit and delete products</p>
+    </div>
+
+    <nav class="manage-products-nav">
+        <a routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            View All Products
+        </a>
+        <a routerLink="./add" routerLinkActive="active">
+            Add New Product
+        </a>
+    </nav>
+
+    <div class="manage-products-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

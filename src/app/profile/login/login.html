@@ -1,0 +1,35 @@
+<div class="login-card">
+    <h2>Login</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-form">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email"
+                [class.invalid]="f['email'].invalid && f['email'].touched">
+            <div class="validation-error" *ngIf="f['email'].invalid && f['email'].touched">
+                <span *ngIf="f['email'].errors?.['required']">Email is required</span>
+                <span *ngIf="f['email'].errors?.['email']">Invalid email format</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password" class="form-control"
+                placeholder="Enter your password" [class.invalid]="f['password'].invalid && f['password'].touched">
+            <div class="validation-error" *ngIf="f['password'].invalid && f['password'].touched">
+                <span *ngIf="f['password'].errors?.['required']">Password is required</span>
+                <span *ngIf="f['password'].errors?.['minlength']">Minimum 3 characters</span>
+            </div>
+        </div>
+
+        <div class="error-message" *ngIf="errorMessage">
+            {{ errorMessage }}
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+
+    <div class="register-link">
+        Don't have an account? <a routerLink="/profile/register">Register now</a>
+    </div>
+</div>

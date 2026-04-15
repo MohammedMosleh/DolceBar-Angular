@@ -1,0 +1,40 @@
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.profile-container {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #3D2314 0%, #5C3D2E 50%, #D4A853 100%);
+    background-size: 200% 200%;
+    background-attachment: fixed;
+    animation: gradientFlow 12s ease infinite;
+    padding: 80px 20px 40px;
+    margin: 0;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 70px 16px 30px;
+        min-height: calc(100vh - 50px);
+    }
+}

@@ -1,0 +1,67 @@
+<div class="edit-user-container">
+    <div class="edit-header">
+        <button class="btn-back" (click)="goBack()">
+            ← Back to Users
+        </button>
+        <h2>Edit User</h2>
+        <p class="email-display">{{ userEmail }}</p>
+    </div>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="edit-form">
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" formControlName="fullName" class="form-control"
+                placeholder="Enter full name">
+            <div class="error" *ngIf="userForm.get('fullName')?.invalid && userForm.get('fullName')?.touched">
+                <span *ngIf="userForm.get('fullName')?.errors?.['required']">Full name is required</span>
+                <span *ngIf="userForm.get('fullName')?.errors?.['minlength']">Minimum 2 characters</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <input type="date" id="birthday" formControlName="birthday" class="form-control">
+            <div class="error" *ngIf="userForm.get('birthday')?.invalid && userForm.get('birthday')?.touched">
+                Birthday is required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" formControlName="gender" value="male">
+                    <span>Male</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" formControlName="gender" value="female">
+                    <span>Female</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+                <input type="checkbox" formControlName="isAdmin">
+                <span>Administrator</span>
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" formControlName="isBlocked">
+                <span>Blocked</span>
+            </label>
+        </div>
+
+        <div class="message success" *ngIf="successMessage">
+            {{ successMessage }}
+        </div>
+
+        <div class="message error" *ngIf="errorMessage">
+            {{ errorMessage }}
+        </div>
+
+        <div class="form-actions">
+            <button type="button" class="btn-cancel" (click)="goBack()">Cancel</button>
+            <button type="submit" class="btn-save" [disabled]="userForm.invalid">Save Changes</button>
+        </div>
+    </form>
+</div>

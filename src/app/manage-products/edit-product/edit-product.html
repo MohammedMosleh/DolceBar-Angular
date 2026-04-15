@@ -1,0 +1,62 @@
+<div class="loading" *ngIf="loading">
+    <p>Loading product...</p>
+</div>
+
+<div class="edit-product-form" *ngIf="!loading">
+    <h2>{{ isEditMode ? 'Edit Product' : 'Add New Product' }}</h2>
+
+    <div class="success-message" *ngIf="successMessage">
+        {{ successMessage }}
+    </div>
+
+    <div class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+    </div>
+
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Product Name *</label>
+            <input type="text" id="name" formControlName="name" class="form-control" placeholder="Enter product name">
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price (₪) *</label>
+            <input type="number" id="price" formControlName="price" class="form-control" placeholder="Enter price"
+                min="1">
+        </div>
+
+        <div class="form-group">
+            <label for="categoryId">Category *</label>
+            <select id="categoryId" formControlName="categoryId" class="form-control">
+                <option *ngFor="let category of categories" [value]="category.id">
+                    {{ category.name }}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Short Description *</label>
+            <input type="text" id="description" formControlName="description" class="form-control"
+                placeholder="Enter short description">
+        </div>
+
+        <div class="form-group">
+            <label for="fullDescription">Full Description</label>
+            <textarea id="fullDescription" formControlName="fullDescription" class="form-control" rows="3"
+                placeholder="Enter detailed description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image Path *</label>
+            <input type="text" id="image" formControlName="image" class="form-control"
+                placeholder="e.g. /assets/product.jpg">
+        </div>
+
+        <div class="form-actions">
+            <button type="button" class="btn-cancel" (click)="goBack()">Cancel</button>
+            <button type="submit" class="btn-submit">
+                {{ isEditMode ? 'Save Changes' : 'Add Product' }}
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,143 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+.not-found-img {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+
+.not-found-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,
+      rgba(61, 35, 20, 0.7) 0%,
+      rgba(212, 168, 83, 0.3) 100%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.not-found-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  color: white;
+  padding: 40px;
+}
+
+.not-found-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 10rem;
+  font-weight: 700;
+  color: #D4A853;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  line-height: 1;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+.not-found-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: white;
+  margin: 20px 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.not-found-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.btn-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #D4A853 0%, #E5C47D 100%);
+  color: #3D2314;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 40px rgba(212, 168, 83, 0.4);
+}
+
+.btn-home:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 50px rgba(212, 168, 83, 0.5);
+  color: #3D2314;
+}
+
+@media (max-width: 768px) {
+  .not-found-title {
+    font-size: 6rem;
+  }
+
+  .not-found-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .not-found-text {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  .btn-home {
+    padding: 14px 32px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .not-found-title {
+    font-size: 4rem;
+  }
+
+  .not-found-subtitle {
+    font-size: 1.4rem;
+  }
+}

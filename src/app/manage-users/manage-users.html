@@ -1,0 +1,16 @@
+<div class="manage-users-container">
+    <div class="manage-users-header">
+        <h1>User Management</h1>
+        <p>View and manage all registered users</p>
+    </div>
+
+    <nav class="manage-users-nav">
+        <a routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            View All Users
+        </a>
+    </nav>
+
+    <div class="manage-users-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

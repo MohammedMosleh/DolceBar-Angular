@@ -1,0 +1,145 @@
+
+.user-details-card {
+    background: #FFFDF9;
+    border-radius: 24px;
+    padding: 48px 40px;
+    box-shadow: 0 20px 60px rgba(74, 55, 40, 0.25);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    border: 1px solid #E8DFD5;
+    animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-avatar {
+    margin-bottom: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.avatar-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #C9A961;
+    box-shadow: 0 8px 24px rgba(201, 169, 97, 0.35);
+    transition: all 0.3s ease;
+}
+
+.avatar-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(201, 169, 97, 0.45);
+}
+
+.user-details-card h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #2D1810;
+    margin-bottom: 8px;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.user-info {
+    text-align: left;
+    margin-bottom: 32px;
+    background-color: #FFF8F0;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #E8DFD5;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.info-row:first-child {
+    padding-top: 0;
+}
+
+.info-label {
+    font-family: 'Lato', sans-serif;
+    color: #8B7355;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.info-value {
+    font-family: 'Lato', sans-serif;
+    color: #2D1810;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.gender-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.gender-badge.male {
+    background: linear-gradient(135deg, #4A90D9 0%, #357ABD 100%);
+    color: white;
+}
+
+.gender-badge.female {
+    background: linear-gradient(135deg, #E91E8C 0%, #C11574 100%);
+    color: white;
+}
+
+.btn-logout {
+    width: 100%;
+    padding: 16px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.35);
+}
+
+@media (max-width: 480px) {
+    .user-details-card {
+        padding: 36px 28px;
+        border-radius: 16px;
+    }
+
+    .user-details-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .avatar-image {
+        width: 110px;
+        height: 110px;
+    }
+}

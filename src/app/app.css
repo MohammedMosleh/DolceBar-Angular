@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--bg-body, #FAF6F1);
+}
+
+
+.p-3.mt-3.mb-5,
+div.p-3,
+div.mt-3,
+div.mb-5 {
+    padding: 0 !important;
+    margin: 0 !important;
+    flex: 1;
+}

@@ -1,0 +1,26 @@
+<div [class.dark]="darkMode" class="about-container">
+  <h2>About Our Project</h2>
+  <p>
+    Welcome to <strong>DolceBar</strong> — a web project created as part of our final Angular lab.
+    This website presents a cozy coffee shop that offers great coffee and desserts.
+  </p>
+  <h3>Project Creators</h3>
+
+  <div class="students">
+    <div class="student">
+      <img [src]="student1Image" alt="Mohammed Mosleh">
+      <p>{{student1Name}}</p>
+      <p>ID: {{student1Id}}</p>
+    </div>
+
+    <div class="student">
+      <img [src]="student2Image" alt="Hassan Qablawi">
+      <p>{{student2Name}}</p>
+      <p>ID: {{student2Id}}</p>
+    </div>
+  </div>
+
+  <button (click)="toggleMode()">
+    {{ darkMode ? 'Light Mode' : 'Dark Mode' }}
+  </button>
+</div>

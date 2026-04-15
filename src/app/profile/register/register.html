@@ -1,0 +1,77 @@
+<div class="register-card">
+    <h2>Register</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="register-form">
+        <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" formControlName="fullName" class="form-control"
+                placeholder="Enter your full name" [class.invalid]="f['fullName'].invalid && f['fullName'].touched">
+            <div class="validation-error" *ngIf="f['fullName'].invalid && f['fullName'].touched">
+                <span *ngIf="f['fullName'].errors?.['required']">Full name is required</span>
+                <span *ngIf="f['fullName'].errors?.['minlength']">Minimum 2 characters</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email"
+                [class.invalid]="f['email'].invalid && f['email'].touched">
+            <div class="validation-error" *ngIf="f['email'].invalid && f['email'].touched">
+                <span *ngIf="f['email'].errors?.['required']">Email is required</span>
+                <span *ngIf="f['email'].errors?.['email']">Invalid email format</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password *</label>
+            <input type="password" id="password" formControlName="password" class="form-control"
+                placeholder="Enter your password" [class.invalid]="f['password'].invalid && f['password'].touched">
+            <div class="validation-error" *ngIf="f['password'].invalid && f['password'].touched">
+                <span *ngIf="f['password'].errors?.['required']">Password is required</span>
+                <span *ngIf="f['password'].errors?.['minlength']">Minimum 4 characters</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password *</label>
+            <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control"
+                placeholder="Confirm your password"
+                [class.invalid]="f['confirmPassword'].invalid && f['confirmPassword'].touched">
+            <div class="validation-error" *ngIf="f['confirmPassword'].invalid && f['confirmPassword'].touched">
+                <span *ngIf="f['confirmPassword'].errors?.['required']">Please confirm password</span>
+                <span *ngIf="f['confirmPassword'].errors?.['passwordMismatch']">Passwords do not match</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="birthday">Birthday *</label>
+            <input type="date" id="birthday" formControlName="birthday" class="form-control"
+                [class.invalid]="f['birthday'].invalid && f['birthday'].touched">
+            <div class="validation-error" *ngIf="f['birthday'].invalid && f['birthday'].touched">
+                <span *ngIf="f['birthday'].errors?.['required']">Birthday is required</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender *</label>
+            <select id="gender" formControlName="gender" class="form-control">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+
+        <div class="error-message" *ngIf="errorMessage">
+            {{ errorMessage }}
+        </div>
+
+        <div class="success-message" *ngIf="successMessage">
+            {{ successMessage }}
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form>
+
+    <div class="login-link">
+        Already have an account? <a routerLink="/profile/login">Login here</a>
+    </div>
+</div>

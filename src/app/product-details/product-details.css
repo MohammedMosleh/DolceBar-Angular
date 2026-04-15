@@ -1,0 +1,83 @@
+:host {
+    display: block;
+    width: 100%;
+    background: linear-gradient(180deg, #FDF8F3 0%, #FAF6F1 100%);
+}
+
+.product-details-container,
+.container,
+.mt-5.p-3,
+div.mt-5,
+div.p-3 {
+    width: 100%;
+    margin: 0 !important;
+    padding: 90px 30px 50px !important;
+    background: linear-gradient(180deg, #FDF8F3 0%, #FAF6F1 100%);
+}
+
+.card {
+    background: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(61, 35, 20, 0.12);
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card-img-top {
+    max-height: 450px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 35px;
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #1A0F0A;
+    margin-bottom: 14px;
+}
+
+.card-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4A3728;
+}
+
+.btn-back,
+.btn {
+    background: linear-gradient(135deg, #3D2314 0%, #D4A853 100%);
+    color: white !important;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(212, 168, 83, 0.4);
+}
+
+@media (max-width: 768px) {
+
+    .product-details-container,
+    .container,
+    .mt-5.p-3,
+    div.mt-5,
+    div.p-3 {
+        padding: 80px 16px 40px !important;
+    }
+
+    .card-body {
+        padding: 25px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+}

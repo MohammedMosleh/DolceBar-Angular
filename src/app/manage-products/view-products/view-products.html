@@ -1,0 +1,35 @@
+<div class="loading" *ngIf="loading">
+    <p>Loading products...</p>
+</div>
+
+<div class="error-message" *ngIf="errorMessage">
+    {{ errorMessage }}
+</div>
+
+<div class="products-grid" *ngIf="!loading">
+    <div class="product-card" *ngFor="let product of products">
+        <div class="product-image">
+            <img [src]="product.image" [alt]="product.name">
+            <span class="category-badge">{{ getCategoryName(product.categoryId) }}</span>
+        </div>
+
+        <div class="product-info">
+            <h3>{{ product.name | titlecase }}</h3>
+            <p class="description">{{ product.description }}</p>
+            <p class="price">₪{{ product.price }}</p>
+        </div>
+
+        <div class="product-actions">
+            <a [routerLink]="['edit', product.id]" class="btn-edit">
+                Edit
+            </a>
+            <button class="btn-delete" (click)="deleteProduct(product.id!)">
+                Delete
+            </button>
+        </div>
+    </div>
+
+    <div class="no-products" *ngIf="products.length === 0">
+        <p>No products found. Add a new product to get started.</p>
+    </div>
+</div>
